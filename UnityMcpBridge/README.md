@@ -17,7 +17,7 @@ A Unity package that enables communication between Unity and Windsurf MCP client
 2. Go to Window > Package Manager
 3. Click the "+" button in the top-left corner
 4. Select "Add package from git URL..."
-5. Enter: `https://github.com/isekream/WindsurfUnityMCP.git?path=/UnityMcpBridge`
+5. Enter: `https://github.com/isekream/WindsurfUnityMCP.git#main?path=/UnityMcpBridge`
 6. Click "Add"
 
 ### Option 2: Manual Installation
