@@ -1,6 +1,6 @@
 # Unity MCP for Windsurf
 
-A Model Context Protocol (MCP) server that allows MCP clients like Claude Desktop or Cursor to perform Unity Editor actions.
+A Model Context Protocol (MCP) server that allows Windsurf to perform Unity Editor actions.
 
 ## Key Features 🚀
 - 🗣️ Natural Language Control: Instruct your LLM to perform Unity tasks
