@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Unity Windsurf MCP Connection Test Script
-This script tests the connection to the Unity Windsurf MCP server and verifies that it's working correctly.
+Windsurf Unity MCP Connection Test Script
+This script tests the connection to the Windsurf Unity MCP server and verifies that it's working correctly.
 """
 
 import asyncio
@@ -12,8 +12,8 @@ import websockets
 SERVER_URL = "ws://localhost:8000/ws"
 
 async def test_connection():
-    """Test the connection to the Unity Windsurf MCP server."""
-    print(f"Connecting to Unity Windsurf MCP server at {SERVER_URL}...")
+    """Test the connection to the Windsurf Unity MCP server."""
+    print(f"Connecting to Windsurf Unity MCP server at {SERVER_URL}...")
     
     try:
         async with websockets.connect(SERVER_URL) as websocket:
@@ -44,11 +44,11 @@ async def test_connection():
             
             if response_data.get("success"):
                 print("\nTest completed successfully! ✅")
-                print("The Unity Windsurf MCP system is working correctly.")
+                print("The Windsurf Unity MCP system is working correctly.")
             else:
                 print("\nTest failed! ❌")
                 print(f"Error: {response_data.get('error', 'Unknown error')}")
-                print("Make sure Unity is running with the Unity Windsurf MCP Bridge package installed.")
+                print("Make sure Unity is running with the Windsurf Unity MCP package installed.")
                 
     except ConnectionRefusedError:
         print("Connection refused! ❌")

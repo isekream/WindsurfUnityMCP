@@ -28,7 +28,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Create FastAPI app
-app = FastAPI(title="Unity Windsurf MCP Server")
+app = FastAPI(title="Windsurf Unity MCP Server")
 
 # Add CORS middleware
 app.add_middleware(
@@ -195,7 +195,8 @@ class FunctionResponse(BaseModel):
 # MCP Routes
 @app.get("/")
 async def root():
-    return {"message": "Unity Windsurf MCP Server is running"}
+    print("\033[92m✓ Windsurf Unity MCP Server running at http://localhost:" + str(port) + "\033[0m")
+    return {"message": "Windsurf Unity MCP Server is running"}
 
 @app.post("/list")
 async def list_resources(request: ResourceListRequest) -> ResourceListResponse:

@@ -1,7 +1,7 @@
 #!/bin/bash
-# Unity MCP Server Startup Script
+# Windsurf Unity MCP Server Startup Script
 
-echo "Starting Unity MCP Server..."
+echo "Starting Windsurf Unity MCP Server..."
 
 # Navigate to the server directory
 cd "$(dirname "$0")/UnityMcpServer"

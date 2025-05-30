@@ -1,7 +1,7 @@
 @echo off
-REM Unity MCP Server Startup Script for Windows
+REM Windsurf Unity MCP Server Startup Script for Windows
 
-echo Starting Unity MCP Server...
+echo Starting Windsurf Unity MCP Server...
 
 REM Navigate to the server directory
 cd /d "%~dp0UnityMcpServer"
