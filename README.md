@@ -41,18 +41,18 @@ Flow: `[Your LLM via MCP Client] <-> [Unity MCP Server (Python)] <-> [Unity MCP 
 6. The MCP Server should automatically be installed onto your machine as a result of this process
 
 ### Step 2: Configure Your MCP Client
-Connect your MCP Client (Claude, Cursor, etc.) to the Python server you installed in Step 1.
+Connect your Windsurf MCP Client to the Python server you installed in Step 1.
 
-#### Option A: Auto-Configure (Recommended for Claude/Cursor)
+#### Option A: Auto-Configure (Recommended for Windsurf)
 1. In Unity, go to Window > Unity MCP
-2. Click Auto Configure Claude or Auto Configure Cursor
+2. Click Auto Configure Windsurf
 3. Look for a green status indicator 🟢 and "Connected"
 
 #### Option B: Manual Configuration
 If Auto-Configure fails or you use a different client:
 1. Find your MCP Client's configuration file (Check client documentation)
-   - Claude Example (macOS): `~/Library/Application Support/Claude/claude_desktop_config.json`
-   - Claude Example (Windows): `%APPDATA%\Claude\claude_desktop_config.json`
+   - Windsurf Example (macOS): `~/Library/Application Support/Windsurf/windsurf_config.json`
+   - Windsurf Example (Windows): `%APPDATA%\Windsurf\windsurf_config.json`
 2. Edit the file to add/update the mcpServers section, using the exact paths from Step 1.
 
 macOS:
@@ -93,7 +93,7 @@ Windows:
 
 ## Usage ▶️
 1. Open your Unity Project. The Unity MCP Bridge (package) should connect automatically. Check status via Window > Unity MCP
-2. Start your MCP Client (Claude, Cursor, etc.). It should automatically launch the Unity MCP Server (Python) using the configuration from Installation
+2. Start your Windsurf MCP Client. It should automatically launch the Unity MCP Server (Python) using the configuration from Installation
 3. Interact! Unity tools should now be available in your MCP Client
 
 Example Prompt: "Create a 3D player controller."
