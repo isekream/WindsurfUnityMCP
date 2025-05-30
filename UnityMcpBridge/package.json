@@ -1,0 +1,22 @@
+{
+  "name": "com.windsurf.unity-mcp",
+  "version": "0.1.0",
+  "displayName": "Unity MCP Bridge",
+  "description": "A bridge between Unity and MCP clients like Claude or Cursor",
+  "unity": "2020.3",
+  "documentationUrl": "https://github.com/yourusername/unity-mcp",
+  "changelogUrl": "https://github.com/yourusername/unity-mcp/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/yourusername/unity-mcp/blob/main/LICENSE",
+  "dependencies": {},
+  "keywords": [
+    "mcp",
+    "ai",
+    "llm",
+    "windsurf"
+  ],
+  "author": {
+    "name": "Windsurf",
+    "email": "info@windsurf.com",
+    "url": "https://windsurf.com"
+  }
+}
