@@ -1,0 +1,14 @@
+{
+    "name": "Windsurf.UnityMcp.Runtime",
+    "rootNamespace": "Windsurf.UnityMcp",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

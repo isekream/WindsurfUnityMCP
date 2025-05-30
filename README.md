@@ -23,10 +23,10 @@ Your LLM can use functions like:
 
 Unity Windsurf MCP connects your tools using two components:
 
-1. **Unity Windsurf MCP Bridge**: A Unity package running inside the Editor (Installed via Package Manager)
+1. **Windsurf Unity MCP**: A Unity package running inside the Editor (Installed via Package Manager)
 2. **Unity Windsurf MCP Server**: A Python server that runs locally, communicating between the Unity Bridge and your MCP Client
 
-Flow: `[Your LLM via MCP Client] <-> [Unity Windsurf MCP Server (Python)] <-> [Unity Windsurf MCP Bridge (Unity Editor)]`
+Flow: `[Your LLM via MCP Client] <-> [Unity Windsurf MCP Server (Python)] <-> [Windsurf Unity MCP (Unity Editor)]`
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ Flow: `[Your LLM via MCP Client] <-> [Unity Windsurf MCP Server (Python)] <-> [U
 1. Open your Unity project
 2. Go to Window > Package Manager
 3. Click + -> Add package from git URL...
-4. Enter: `https://github.com/isekream/WindsurfUnityMCP.git#main?path=/UnityMcpBridge`
+4. Enter: `https://github.com/isekream/WindsurfUnityMCP.git#main?path=/WindsurfUnityMCP`
 5. Click Add
 
 ### Step 2: Set Up the MCP Server
@@ -60,7 +60,7 @@ Connect your Windsurf MCP Client to the Python server you installed in Step 2.
 
 #### Option A: Auto-Configure (Recommended for Windsurf)
 
-1. In Unity, go to Window > Unity Windsurf MCP
+1. In Unity, go to Window > Windsurf Unity MCP
 2. Click Auto Configure Windsurf
 3. Look for a green status indicator 🟢 and "Connected"
 
@@ -113,7 +113,7 @@ Windows:
 
 ## Usage ▶️
 
-1. Open your Unity Project. The Unity Windsurf MCP Bridge (package) should connect automatically. Check status via Window > Unity Windsurf MCP
+1. Open your Unity Project. The Windsurf Unity MCP (package) should connect automatically. Check status via Window > Windsurf Unity MCP
 2. Start your Windsurf MCP Client. It should automatically launch the Unity Windsurf MCP Server (Python) using the configuration from Installation
 3. Interact! Unity tools should now be available in your MCP Client
 

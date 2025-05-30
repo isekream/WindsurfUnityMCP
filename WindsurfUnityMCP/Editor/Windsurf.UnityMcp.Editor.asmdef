@@ -1,0 +1,20 @@
+{
+    "name": "Windsurf.UnityMcp.Editor",
+    "rootNamespace": "Windsurf.UnityMcp.Editor",
+    "references": [
+        "Windsurf.UnityMcp.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

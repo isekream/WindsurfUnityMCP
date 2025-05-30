@@ -1,0 +1,22 @@
+{
+  "name": "com.windsurf.unity-mcp",
+  "version": "1.0.0",
+  "displayName": "Windsurf Unity MCP",
+  "description": "A bridge between Unity and Windsurf MCP client",
+  "unity": "2020.3",
+  "documentationUrl": "https://github.com/isekream/WindsurfUnityMCP",
+  "changelogUrl": "https://github.com/isekream/WindsurfUnityMCP/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/isekream/WindsurfUnityMCP/blob/main/LICENSE",
+  "dependencies": {},
+  "keywords": [
+    "mcp",
+    "ai",
+    "llm",
+    "windsurf"
+  ],
+  "author": {
+    "name": "Windsurf",
+    "email": "info@windsurf.com",
+    "url": "https://windsurf.com"
+  }
+}
