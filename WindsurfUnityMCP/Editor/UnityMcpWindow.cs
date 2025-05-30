@@ -278,25 +278,38 @@ namespace Windsurf.UnityMcp.Editor
             // Find the Unity Windsurf MCP Server directory relative to the Unity project
             string projectPath = Directory.GetParent(Application.dataPath).FullName;
             string parentDir = Directory.GetParent(projectPath).FullName;
-            
-            // Look for the UnityMcpServer directory in the parent directory
-            string serverPath = Path.Combine(parentDir, "UnityMcpServer");
-            
-            // Verify the path exists
-            if (Directory.Exists(serverPath))
+            string[] possibleLocations = new string[]
             {
-                return serverPath;
+                // Look in the parent directory of the Unity project
+                Path.Combine(parentDir, "UnityMcpServer"),
+                
+                // Look in the same directory as the Unity project
+                Path.Combine(projectPath, "UnityMcpServer"),
+                
+                // Look in the package directory itself
+                Path.Combine(projectPath, "Packages", "com.windsurf.unity-mcp", "Server"),
+                
+                // Look in a directory named WindsurfUnityMCP (new name)
+                Path.Combine(parentDir, "WindsurfUnityMCP", "UnityMcpServer"),
+                
+                // Look in the original repository structure
+                Path.Combine(parentDir, "UnityMCP", "UnityMcpServer")
+            };
+            
+            // Check each possible location
+            foreach (string path in possibleLocations)
+            {
+                if (Directory.Exists(path))
+                {
+                    Debug.Log($"[UnityMcpWindow] Found server at {path}");
+                    return path;
+                }
             }
             
-            // Fallback: Try to find it in the same directory as the Unity project
-            serverPath = Path.Combine(Directory.GetParent(projectPath).FullName, "UnityMcpServer");
-            if (Directory.Exists(serverPath))
-            {
-                return serverPath;
-            }
+            // If we can't find it, log an error and suggest manual configuration
+            Debug.LogError("[UnityMcpWindow] Could not find UnityMcpServer directory. Please make sure you've downloaded the full repository from https://github.com/isekream/WindsurfUnityMCP and configure the path manually.");
             
-            // If we can't find it, log an error and return a default path
-            Debug.LogError("[UnityMcpWindow] Could not find UnityMcpServer directory. Please configure the path manually.");
+            // Return the most likely path as a default
             return Path.Combine(parentDir, "UnityMcpServer");
         }
     }

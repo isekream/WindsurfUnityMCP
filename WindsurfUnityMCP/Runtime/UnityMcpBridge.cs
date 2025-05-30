@@ -40,7 +40,12 @@ namespace Windsurf.UnityMcp
                 {
                     GameObject go = new GameObject("UnityMcpBridge");
                     _instance = go.AddComponent<UnityMcpBridge>();
-                    DontDestroyOnLoad(go);
+                    
+                    // Only use DontDestroyOnLoad in play mode
+                    if (Application.isPlaying)
+                    {
+                        DontDestroyOnLoad(go);
+                    }
                 }
                 return _instance;
             }
