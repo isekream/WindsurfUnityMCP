@@ -450,40 +450,10 @@ namespace Windsurf.UnityMcp
             }
         }
         
-        /// <summary>
-        /// Manage Unity scenes
-        /// </summary>
-        public static async Task<JObject> ManageSceneAsync(JObject parameters)
-        {
-            // Implementation will be added in a separate file
-            return new JObject { ["success"] = false, ["error"] = "Not implemented yet" };
-        }
-        
-        /// <summary>
-        /// Perform asset operations in Unity
-        /// </summary>
-        public static async Task<JObject> ManageAssetAsync(JObject parameters)
-        {
-            // Implementation will be added in a separate file
-            return new JObject { ["success"] = false, ["error"] = "Not implemented yet" };
-        }
-        
-        /// <summary>
-        /// Manage GameObjects in Unity
-        /// </summary>
-        public static async Task<JObject> ManageGameObjectAsync(JObject parameters)
-        {
-            // Implementation will be added in a separate file
-            return new JObject { ["success"] = false, ["error"] = "Not implemented yet" };
-        }
-        
-        /// <summary>
-        /// Get messages from or clear the Unity Editor console
-        /// </summary>
-        public static async Task<JObject> ReadConsoleAsync(JObject parameters)
-        {
-            // Implementation will be added in a separate file
-            return new JObject { ["success"] = false, ["error"] = "Not implemented yet" };
-        }
+        // Note: The following methods are implemented in their respective partial class files:
+        // - ManageSceneAsync: McpFunctions.Scene.cs
+        // - ManageAssetAsync: McpFunctions.Asset.cs
+        // - ManageGameObjectAsync: McpFunctions.GameObject.cs
+        // - ReadConsoleAsync: McpFunctions.Console.cs
     }
 }
