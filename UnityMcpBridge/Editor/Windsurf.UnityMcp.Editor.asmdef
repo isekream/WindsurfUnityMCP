@@ -2,7 +2,7 @@
     "name": "Windsurf.UnityMcp.Editor",
     "rootNamespace": "Windsurf.UnityMcp.Editor",
     "references": [
-        "Windsurf.UnityMcp"
+        "Windsurf.UnityMcp.Runtime"
     ],
     "includePlatforms": [
         "Editor"

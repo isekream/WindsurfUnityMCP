@@ -1,6 +1,6 @@
-# Unity MCP Server
+# Unity Windsurf MCP Server
 
-This is the Python server component of the Unity MCP system that enables communication between Windsurf MCP clients and the Unity Editor.
+This is the Python server component of the Unity Windsurf MCP system that enables communication between Windsurf MCP clients and the Unity Editor.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ By default, the server will run on port 8000. You can change this by setting the
 
 ## Configuration
 
-The server doesn't require any configuration files. It will automatically connect to any Unity Editor instances running the Unity MCP Bridge package.
+The server doesn't require any configuration files. It will automatically connect to any Unity Editor instances running the Unity Windsurf MCP Bridge package.
 
 ## API
 
@@ -70,7 +70,7 @@ or
 
 If you encounter any issues:
 
-1. Make sure the Unity Editor is running with the Unity MCP Bridge package installed
+1. Make sure the Unity Editor is running with the Unity Windsurf MCP Bridge package installed
 2. Check that the server is running on the correct port
 3. Verify that your MCP client is properly configured to use the server
 4. Check the server logs for any error messages

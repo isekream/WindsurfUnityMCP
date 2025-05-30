@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unity MCP Server
+Unity Windsurf MCP Server
 This server acts as a bridge between Windsurf MCP clients and the Unity Editor.
 It implements the Model Context Protocol (MCP) to expose Unity functionality to LLMs.
 """
@@ -28,7 +28,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Create FastAPI app
-app = FastAPI(title="Unity MCP Server")
+app = FastAPI(title="Unity Windsurf MCP Server")
 
 # Add CORS middleware
 app.add_middleware(
@@ -195,7 +195,7 @@ class FunctionResponse(BaseModel):
 # MCP Routes
 @app.get("/")
 async def root():
-    return {"message": "Unity MCP Server is running"}
+    return {"message": "Unity Windsurf MCP Server is running"}
 
 @app.post("/list")
 async def list_resources(request: ResourceListRequest) -> ResourceListResponse:

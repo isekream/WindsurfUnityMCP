@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 namespace Windsurf.UnityMcp.Editor
 {
     /// <summary>
-    /// Editor window for Unity MCP configuration and management
+    /// Editor window for Unity Windsurf MCP configuration and management
     /// </summary>
     public class UnityMcpWindow : EditorWindow
     {
@@ -24,10 +24,10 @@ namespace Windsurf.UnityMcp.Editor
         private readonly string _windsurfConfigPathMac = "~/Library/Application Support/Windsurf/windsurf_desktop_config.json";
         private readonly string _windsurfConfigPathWindows = "%APPDATA%\\Windsurf\\windsurf_desktop_config.json";
         
-        [MenuItem("Window/Unity MCP")]
+        [MenuItem("Window/Unity Windsurf MCP")]
         public static void ShowWindow()
         {
-            GetWindow<UnityMcpWindow>("Unity MCP");
+            GetWindow<UnityMcpWindow>("Unity Windsurf MCP");
         }
         
         private void OnEnable()
@@ -42,7 +42,7 @@ namespace Windsurf.UnityMcp.Editor
         {
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
             
-            GUILayout.Label("Unity MCP Configuration", EditorStyles.boldLabel);
+            GUILayout.Label("Unity Windsurf MCP Configuration", EditorStyles.boldLabel);
             
             EditorGUI.BeginChangeCheck();
             
@@ -243,7 +243,7 @@ namespace Windsurf.UnityMcp.Editor
                     config["mcpServers"] = mcpServers;
                 }
                 
-                // Add or update the Unity MCP server
+                // Add or update the Unity Windsurf MCP server
                 JObject unityMcp = new JObject
                 {
                     ["command"] = "uv",
@@ -274,7 +274,7 @@ namespace Windsurf.UnityMcp.Editor
         
         private string GetServerPath()
         {
-            // Find the Unity MCP Server directory relative to the Unity project
+            // Find the Unity Windsurf MCP Server directory relative to the Unity project
             string projectPath = Directory.GetParent(Application.dataPath).FullName;
             string parentDir = Directory.GetParent(projectPath).FullName;
             

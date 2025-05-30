@@ -1,12 +1,12 @@
 {
-  "name": "com.windsurf.unity-mcp",
+  "name": "com.windsurf.unity-windsurf-mcp",
   "version": "0.1.0",
-  "displayName": "Unity MCP Bridge",
+  "displayName": "Unity Windsurf MCP Bridge",
   "description": "A bridge between Unity and Windsurf MCP client",
   "unity": "2020.3",
-  "documentationUrl": "https://github.com/yourusername/unity-mcp",
-  "changelogUrl": "https://github.com/yourusername/unity-mcp/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/yourusername/unity-mcp/blob/main/LICENSE",
+  "documentationUrl": "https://github.com/windsurf/unity-windsurf-mcp",
+  "changelogUrl": "https://github.com/windsurf/unity-windsurf-mcp/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/windsurf/unity-windsurf-mcp/blob/main/LICENSE",
   "dependencies": {},
   "keywords": [
     "mcp",

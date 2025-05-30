@@ -1,4 +1,4 @@
-# Unity MCP for Windsurf
+# Unity Windsurf MCP for Windsurf
 
 A Model Context Protocol (MCP) server that allows Windsurf to perform Unity Editor actions.
 
@@ -18,11 +18,11 @@ Your LLM can use functions like:
 - `execute_menu_item`: Executes a menu item via its path (e.g., "File/Save Project")
 
 ## How It Works 🤔
-Unity MCP connects your tools using two components:
-1. **Unity MCP Bridge**: A Unity package running inside the Editor (Installed via Package Manager)
-2. **Unity MCP Server**: A Python server that runs locally, communicating between the Unity Bridge and your MCP Client
+Unity Windsurf MCP connects your tools using two components:
+1. **Unity Windsurf MCP Bridge**: A Unity package running inside the Editor (Installed via Package Manager)
+2. **Unity Windsurf MCP Server**: A Python server that runs locally, communicating between the Unity Bridge and your MCP Client
 
-Flow: `[Your LLM via MCP Client] <-> [Unity MCP Server (Python)] <-> [Unity MCP Bridge (Unity Editor)]`
+Flow: `[Your LLM via MCP Client] <-> [Unity Windsurf MCP Server (Python)] <-> [Unity Windsurf MCP Bridge (Unity Editor)]`
 
 ## Prerequisites
 - Git CLI: For cloning the server code
@@ -33,18 +33,27 @@ Flow: `[Your LLM via MCP Client] <-> [Unity MCP Server (Python)] <-> [Unity MCP 
 ## Installation ⚙️
 
 ### Step 1: Install the Unity Package (Bridge)
+
 1. Open your Unity project
 2. Go to Window > Package Manager
 3. Click + -> Add package from git URL...
-4. Enter: `https://github.com/yourusername/unity-mcp.git?path=/UnityMcpBridge`
+4. Enter: `https://github.com/windsurf/unity-windsurf-mcp.git?path=/UnityMcpBridge`
 5. Click Add
-6. The MCP Server should automatically be installed onto your machine as a result of this process
 
-### Step 2: Configure Your MCP Client
-Connect your Windsurf MCP Client to the Python server you installed in Step 1.
+### Step 2: Set Up the MCP Server
+1. Clone this repository: `git clone https://github.com/windsurf/unity-mcp.git`
+2. Navigate to the cloned directory
+3. Run the server:
+   - On macOS/Linux: `./start_server.sh`
+   - On Windows: Double-click `start_server.bat`
+4. The server will start on port 8000 by default
+
+### Step 3: Configure Your MCP Client
+
+Connect your Windsurf MCP Client to the Python server you installed in Step 2.
 
 #### Option A: Auto-Configure (Recommended for Windsurf)
-1. In Unity, go to Window > Unity MCP
+1. In Unity, go to Window > Unity Windsurf MCP
 2. Click Auto Configure Windsurf
 3. Look for a green status indicator 🟢 and "Connected"
 
@@ -92,8 +101,8 @@ Windows:
 ```
 
 ## Usage ▶️
-1. Open your Unity Project. The Unity MCP Bridge (package) should connect automatically. Check status via Window > Unity MCP
-2. Start your Windsurf MCP Client. It should automatically launch the Unity MCP Server (Python) using the configuration from Installation
+1. Open your Unity Project. The Unity Windsurf MCP Bridge (package) should connect automatically. Check status via Window > Unity Windsurf MCP
+2. Start your Windsurf MCP Client. It should automatically launch the Unity Windsurf MCP Server (Python) using the configuration from Installation
 3. Interact! Unity tools should now be available in your MCP Client
 
 Example Prompt: "Create a 3D player controller."
