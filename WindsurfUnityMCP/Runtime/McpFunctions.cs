@@ -12,7 +12,7 @@ namespace Windsurf.UnityMcp
     /// <summary>
     /// Contains all MCP function implementations for Unity operations
     /// </summary>
-    public static class McpFunctions
+    public static partial class McpFunctions
     {
         /// <summary>
         /// Execute a Unity Editor menu item

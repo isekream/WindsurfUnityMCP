@@ -2,7 +2,8 @@
     "name": "Windsurf.UnityMcp.Editor",
     "rootNamespace": "Windsurf.UnityMcp.Editor",
     "references": [
-        "Windsurf.UnityMcp.Runtime"
+        "Windsurf.UnityMcp",
+        "Unity.Nuget.Newtonsoft.Json"
     ],
     "includePlatforms": [
         "Editor"

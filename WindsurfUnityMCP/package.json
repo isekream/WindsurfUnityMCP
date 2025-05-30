@@ -7,7 +7,9 @@
   "documentationUrl": "https://github.com/isekream/WindsurfUnityMCP",
   "changelogUrl": "https://github.com/isekream/WindsurfUnityMCP/blob/main/CHANGELOG.md",
   "licensesUrl": "https://github.com/isekream/WindsurfUnityMCP/blob/main/LICENSE",
-  "dependencies": {},
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
+  },
   "keywords": [
     "mcp",
     "ai",

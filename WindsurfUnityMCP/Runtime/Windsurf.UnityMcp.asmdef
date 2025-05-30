@@ -1,7 +1,9 @@
 {
     "name": "Windsurf.UnityMcp",
     "rootNamespace": "Windsurf.UnityMcp",
-    "references": [],
+    "references": [
+        "Unity.Nuget.Newtonsoft.Json"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
