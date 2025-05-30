@@ -42,7 +42,7 @@ Flow: `[Your LLM via MCP Client] <-> [Unity Windsurf MCP Server (Python)] <-> [W
 1. Open your Unity project
 2. Go to Window > Package Manager
 3. Click + -> Add package from git URL...
-4. Enter: `https://github.com/isekream/WindsurfUnityMCP.git#main?path=/WindsurfUnityMCP`
+4. Enter: `https://github.com/isekream/WindsurfUnityMCP.git?path=/WindsurfUnityMCP`
 5. Click Add
 
 ### Step 2: Set Up the MCP Server
