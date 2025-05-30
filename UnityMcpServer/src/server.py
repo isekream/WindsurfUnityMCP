@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Unity MCP Server
-This server acts as a bridge between MCP clients (like Claude or Cursor) and the Unity Editor.
+This server acts as a bridge between Windsurf MCP clients and the Unity Editor.
 It implements the Model Context Protocol (MCP) to expose Unity functionality to LLMs.
 """
 

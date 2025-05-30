@@ -1,6 +1,6 @@
 # Unity MCP Server
 
-This is the Python server component of the Unity MCP system that enables communication between MCP clients (like Claude or Cursor) and the Unity Editor.
+This is the Python server component of the Unity MCP system that enables communication between Windsurf MCP clients and the Unity Editor.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ or
 ```json
 {
   "client_type": "mcp_client",
-  "client_name": "Claude"
+  "client_name": "Windsurf"
 }
 ```
 

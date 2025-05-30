@@ -20,13 +20,9 @@ namespace Windsurf.UnityMcp.Editor
         private string _statusMessage = "";
         private MessageType _statusMessageType = MessageType.Info;
         
-        // Claude config paths
-        private readonly string _claudeConfigPathMac = "~/Library/Application Support/Claude/claude_desktop_config.json";
-        private readonly string _claudeConfigPathWindows = "%APPDATA%\\Claude\\claude_desktop_config.json";
-        
-        // Cursor config paths
-        private readonly string _cursorConfigPathMac = "~/Library/Application Support/Cursor/cursor_desktop_config.json";
-        private readonly string _cursorConfigPathWindows = "%APPDATA%\\Cursor\\cursor_desktop_config.json";
+        // Windsurf config paths
+        private readonly string _windsurfConfigPathMac = "~/Library/Application Support/Windsurf/windsurf_desktop_config.json";
+        private readonly string _windsurfConfigPathWindows = "%APPDATA%\\Windsurf\\windsurf_desktop_config.json";
         
         [MenuItem("Window/Unity MCP")]
         public static void ShowWindow()
@@ -113,14 +109,9 @@ namespace Windsurf.UnityMcp.Editor
             
             EditorGUILayout.BeginHorizontal();
             
-            if (GUILayout.Button("Auto Configure Claude"))
+            if (GUILayout.Button("Auto Configure Windsurf"))
             {
-                AutoConfigureClaude();
-            }
-            
-            if (GUILayout.Button("Auto Configure Cursor"))
-            {
-                AutoConfigureCursor();
+                AutoConfigureWindsurf();
             }
             
             EditorGUILayout.EndHorizontal();
@@ -185,47 +176,34 @@ namespace Windsurf.UnityMcp.Editor
             }
         }
         
-        private void AutoConfigureClaude()
+        private void AutoConfigureWindsurf()
         {
             try
             {
-                string configPath = GetConfigPath(_claudeConfigPathMac, _claudeConfigPathWindows);
-                if (string.IsNullOrEmpty(configPath))
+                string configPath = GetConfigPath(_windsurfConfigPathMac, _windsurfConfigPathWindows);
+                
+                // Create the config directory if it doesn't exist
+                string configDir = Path.GetDirectoryName(configPath);
+                if (!Directory.Exists(configDir))
                 {
-                    _statusMessage = "Claude config file not found";
-                    _statusMessageType = MessageType.Error;
-                    return;
+                    Directory.CreateDirectory(configDir);
                 }
                 
-                ConfigureMcpClient(configPath, "Claude");
+                // Check if the config file exists
+                if (!File.Exists(configPath))
+                {
+                    // Create an empty config file with default structure
+                    File.WriteAllText(configPath, "{\n  \"mcpServers\": {}\n}");
+                    Debug.Log($"[UnityMcpWindow] Created new Windsurf config file at {configPath}");
+                }
+                
+                ConfigureMcpClient(configPath, "Windsurf");
             }
             catch (Exception ex)
             {
-                _statusMessage = $"Error configuring Claude: {ex.Message}";
+                _statusMessage = $"Error configuring Windsurf: {ex.Message}";
                 _statusMessageType = MessageType.Error;
-                Debug.LogError($"[UnityMcpWindow] Error configuring Claude: {ex.Message}");
-            }
-        }
-        
-        private void AutoConfigureCursor()
-        {
-            try
-            {
-                string configPath = GetConfigPath(_cursorConfigPathMac, _cursorConfigPathWindows);
-                if (string.IsNullOrEmpty(configPath))
-                {
-                    _statusMessage = "Cursor config file not found";
-                    _statusMessageType = MessageType.Error;
-                    return;
-                }
-                
-                ConfigureMcpClient(configPath, "Cursor");
-            }
-            catch (Exception ex)
-            {
-                _statusMessage = $"Error configuring Cursor: {ex.Message}";
-                _statusMessageType = MessageType.Error;
-                Debug.LogError($"[UnityMcpWindow] Error configuring Cursor: {ex.Message}");
+                Debug.LogError($"[UnityMcpWindow] Error configuring Windsurf: {ex.Message}");
             }
         }
         
@@ -242,7 +220,8 @@ namespace Windsurf.UnityMcp.Editor
                 configPath = windowsPath.Replace("%APPDATA%", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
             }
             
-            return File.Exists(configPath) ? configPath : "";
+            // Return the path regardless of whether the file exists
+            return configPath;
         }
         
         private void ConfigureMcpClient(string configPath, string clientName)
@@ -295,19 +274,29 @@ namespace Windsurf.UnityMcp.Editor
         
         private string GetServerPath()
         {
-            // In a real implementation, this would be the path to the MCP server
-            // For now, we'll just use a placeholder
-            if (Application.platform == RuntimePlatform.OSXEditor)
+            // Find the Unity MCP Server directory relative to the Unity project
+            string projectPath = Directory.GetParent(Application.dataPath).FullName;
+            string parentDir = Directory.GetParent(projectPath).FullName;
+            
+            // Look for the UnityMcpServer directory in the parent directory
+            string serverPath = Path.Combine(parentDir, "UnityMcpServer");
+            
+            // Verify the path exists
+            if (Directory.Exists(serverPath))
             {
-                return "/usr/local/bin/UnityMCP/UnityMcpServer";
-            }
-            else if (Application.platform == RuntimePlatform.WindowsEditor)
-            {
-                string username = Environment.UserName;
-                return $"C:\\Users\\{username}\\AppData\\Local\\Programs\\UnityMCP\\UnityMcpServer";
+                return serverPath;
             }
             
-            return "";
+            // Fallback: Try to find it in the same directory as the Unity project
+            serverPath = Path.Combine(Directory.GetParent(projectPath).FullName, "UnityMcpServer");
+            if (Directory.Exists(serverPath))
+            {
+                return serverPath;
+            }
+            
+            // If we can't find it, log an error and return a default path
+            Debug.LogError("[UnityMcpWindow] Could not find UnityMcpServer directory. Please configure the path manually.");
+            return Path.Combine(parentDir, "UnityMcpServer");
         }
     }
 }
